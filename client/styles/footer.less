@@ -1,31 +1,107 @@
+/*  */
+@bkg-color: #2d1846;
+@icon-color: white;
+@text-color: #8a858d;
+@hover-color: #d7263d;
+
 .footer-default {
-   background-color: #5d6d7e;
-   background-image: url('/custom/footerimage.jpg');
+   background-color: @bkg-color;
+/*   background-image: url('/custom/footer-background.png');   */
 }
 
 .footer-text {
-   color: white;
+   font-family : @font-size-small;
+   color: @icon-color;
+
+  address, a {
+    color: @text-color;
+    }
+}
+
+.footer-text a:hover{
+  color: @hover-color;
+  font-weight: bold;  
 }
 
 .footer-heading {
-   font-weight:bold;
+   font-family : @headings-font-family-h1;
+   font-weight : @headings-font-weight-h1;
+   color: @icon-color;
 }
+
+a.btn
+  {
+    position: relative;
+    text-align: center;
+    width: 0px;
+    height: 0px;
+    padding: 20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px; 
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    -khtml-border-radius: 20px 20px 20px 20px; 
+  }
+
+a.btn i {
+    font-size: 20px;
+    position: absolute;
+    left: 9px;
+    top: 10px;
+  }
+
+a.btn.btn-social-icon{
+    float: left;
+    margin: 0 5px 0 0;
+    cursor: pointer;
+    background: @bkg-color ;
+    color: @icon-color;
+    transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s; 	
+  }
+
+a.btn.btn-social-icon:hover {
+     background: @icon-color;
+     color: @bkg-color;
+     transition: 0.5s;
+     -moz-transition: 0.5s;
+     -webkit-transition: 0.5s;
+     -o-transition: 0.5s;
+     -webkit-filter: drop-shadow(0 1px 10px rgba(0,0,0,.8));
+     -moz-filter: drop-shadow(0 1px 10px rgba(0,0,0,.8));
+     -ms-filter: drop-shadow(0 1px 10px rgba(0,0,0,.8));
+     -o-filter: drop-shadow(0 1px 10px rgba(0,0,0,.8));
+     filter: drop-shadow(0 1px 10px rgba(0,0,0,.8));  
+
+     i {color: @bkg-color;} 
+  }
 
 .footer-social-media-icons {
    padding:40px 10px;
 
-   i { color: white;} 
+   i { color: @icon-color;} 
 }
 
+/*
+.footer-social-media-icons i:hover {
+   color: @bkg-color;
+}
+*/
 
 .footer-copyright {
    position: relative;
+   border-top: solid 1px rgba(255,255,255,0.15);
    margin-bottom: 0px;
    padding: 0px 0px 0px 0px;
-   background-color: #1b2631;
+   background-color: @bkg-color ;
 }
 
 .footer-copyright p {
    text-align:center;
-   color: white;
+   color: @text-color;
 }
+
