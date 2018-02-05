@@ -1,62 +1,58 @@
 import React, { Component }  from "react";
 import PropTypes from "prop-types";
 import { Meteor } from "meteor/meteor";
-import { Components } from "@reactioncommerce/reaction-components";
-import { registerComponent } from "/imports/plugins/core/components/lib";
 import { replaceComponent, composeWithTracker } from "/imports/plugins/core/components/lib";
-import { TagList, TagItem } from "/imports/plugins/core/ui/client/components";
-import { getTagIds } from "/lib/selectors/tags";
-import { DragDropProvider } from "/imports/plugins/core/ui/client/providers";
-import { TagHelpers } from "/imports/plugins/core/ui-tagnav/client/helpers";
-import _ from "lodash";
+import { Tags } from "/lib/collections";
 
 class myFooter extends Component {
-  static propTypes = {
-    shop: PropTypes.object,
-    visibility: PropTypes.object.isRequired
-  };
-
-  static defaultProps = {
-    visibility: {
-      tags: true,
-    }
-  };
-
-  state = {
-    navBarVisible: false
+  constructor(props) {
+    super(props);
   }
 
-  toggleNavbarVisibility = () => {
-    const isVisible = this.state.navBarVisible;
-    this.setState({ navBarVisible: !isVisible });
-  }
+  SideLinksTag = (tags) => {
 
-  handleCloseNavbar = () => {
-    this.setState({ navBarVisible: false });
-  }
-
-  renderTagItem() {
-    return (
-      <ul>
-        <Components.TagItem
-          isVisible={this.state.navBarVisible}
-          closeNavbar={this.handleCloseNavbar}
-          {...this.props}
-        >
-<p>{this.props.tag}</p>
-        </Components.TagItem>
-      </ul>
+    const TagList = _.compact(tags);
+    let tagsData = [];
+    let listItems = {};
+    if (Array.isArray(TagList)) {
+      for (const tagItem of TagList) {
+        const tagId = tagItem._id;
+        const tagName = tagItem.name;
+        const tagSlug = tagItem.slug;
+        const uri = 'tag/slug';
+        tagsData.push({ id: tagId, name: tagName, slug: tagSlug, uri: uri.replace(/slug/g, tagSlug)});
+      }
+    listItems = (
+     <ul className="list-unstyled">
+      {tagsData.map((tagData) => 
+          <li key={tagData.tagId}>
+           <a href={tagData.uri}>{tagData.name}</a>
+          </li> 
+        )
+      }
+     </ul>
     );
   }
+   return (
+     <div>
+       { listItems } 
+     </div>
+   );
+ }
 
   render() {
+   const tags = Tags.find({
+        isTopLevel: true
+      }).fetch();
+
     return (
       <div className="reaction-navigation-footer footer-default">
        <nav className="navbar-bottom" role="navigation">
         <div className="col-xs-6 col-sm-3">
          <h5 className="footer-heading"> SHOP </h5>
-         { this.props.visibility.tags && this.renderTagItem() }
-         <li><a href={"tag/${this.props.slug}"}>{this.props.name}</a></li>
+           <div className="footer-text">
+           {this.SideLinksTag(tags)}
+           </div>
         </div>
         <div className="col-xs-6 col-sm-5 footer-text">
           <h5 className="footer-heading"> OUR ADDRESS </h5>
@@ -85,6 +81,7 @@ class myFooter extends Component {
         <p>&copy;Copyright 2017 Wovenz </p>
        </div>
       </div>
+
     );
   }
 }

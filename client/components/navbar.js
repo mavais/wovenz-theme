@@ -1,7 +1,9 @@
-/* Custom navbar.js without title in Brand */
+// Custom NavBar to remove Brand Logo from navbar by changing visibilty of brand to false at line 37
+// Not using anymore, commented out the import from index.js in root folder of custom-theme
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Components } from "@reactioncommerce/reaction-components";
+import { replaceComponent, composeWithTracker } from "/imports/plugins/core/components/lib";
 import { Meteor } from "meteor/meteor";
 
 // TODO: Delete this, and do it the react way - Mike M.
@@ -20,7 +22,7 @@ async function openSearchModalLegacy(props) {
   }
 }
 
-class myNavBar extends Component {
+class MyNavBar extends Component {
   static propTypes = {
     brandMedia: PropTypes.object,
     hasProperPermission: PropTypes.bool,
@@ -32,7 +34,7 @@ class myNavBar extends Component {
   static defaultProps = {
     visibility: {
       hamburger: true,
-      brand: true,
+      brand: false,
       tags: true,
       search: true,
       notifications: true,
@@ -83,6 +85,7 @@ class myNavBar extends Component {
     return (
       <Components.Brand
         logo={logo}
+        title={shop.name}
       />
     );
   }
@@ -164,5 +167,5 @@ class myNavBar extends Component {
   }
 }
 
-replaceComponent("NavBar", myNavBar);
-export default myNavBar;
+replaceComponent("NavBar", MyNavBar);
+export default MyNavBar;

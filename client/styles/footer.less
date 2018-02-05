@@ -6,11 +6,18 @@
 
 .footer-default {
    background-color: @bkg-color;
-/*   background-image: url('/custom/footer-background.png');   */
+   padding: 40px 20px 0px 20px;
+}
+
+.img-responsive{
+  max-height: -webkit-stretch;
+  max-height: -moz-available;
 }
 
 .footer-text {
-   font-family : @font-size-small;
+   dont-style: normal;
+   font-size: 80%; 
+   font-family: @font-size-small;
    color: @icon-color;
 
   address, a {
@@ -29,7 +36,12 @@
    color: @icon-color;
 }
 
-a.btn
+.footer-social-media-icons{
+   padding:40px 10px;
+
+   i { color: @icon-color;} 
+
+ a.btn
   {
     position: relative;
     text-align: center;
@@ -79,14 +91,15 @@ a.btn.btn-social-icon:hover {
 
      i {color: @bkg-color;} 
   }
-
+}
+/*
 .footer-social-media-icons {
    padding:40px 10px;
 
    i { color: @icon-color;} 
 }
 
-/*
+
 .footer-social-media-icons i:hover {
    color: @bkg-color;
 }
