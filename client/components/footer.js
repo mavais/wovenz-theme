@@ -19,7 +19,7 @@ class myFooter extends Component {
         const tagId = tagItem._id;
         const tagName = tagItem.name;
         const tagSlug = tagItem.slug;
-        const uri = 'tag/slug';
+        const uri = '/tag/slug';
         tagsData.push({ id: tagId, name: tagName, slug: tagSlug, uri: uri.replace(/slug/g, tagSlug)});
       }
     listItems = (
