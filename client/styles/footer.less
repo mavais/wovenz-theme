@@ -1,11 +1,11 @@
 /*  */
-@bkg-color: #2d1846;
-@icon-color: white;
-@text-color: #8a858d;
-@hover-color: #d7263d;
+@ftr-bkg-color: lighten(black,30%);
+@ftr-icon-color: #DAA520;
+@ftr-text-color: #DAA520;
+@ftr-hover-color: white;
 
 .footer-default {
-   background-color: @bkg-color;
+   background-color: @ftr-bkg-color;
    padding: 40px 20px 0px 20px;
 }
 
@@ -18,28 +18,28 @@
    dont-style: normal;
    font-size: 80%; 
    font-family: @font-size-small;
-   color: @icon-color;
+   color: @ftr-icon-color;
 
   address, a {
-    color: @text-color;
+    color: @ftr-text-color;
     }
 }
 
 .footer-text a:hover{
-  color: @hover-color;
+  color: @ftr-hover-color;
   font-weight: bold;  
 }
 
 .footer-heading {
    font-family : @headings-font-family-h1;
    font-weight : @headings-font-weight-h1;
-   color: @icon-color;
+   color: @ftr-icon-color;
 }
 
 .footer-social-media-icons{
    padding:40px 10px;
 
-   i { color: @icon-color;} 
+   i { color: @ftr-icon-color;} 
 
  a.btn
   {
@@ -68,8 +68,8 @@ a.btn.btn-social-icon{
     float: left;
     margin: 0 5px 0 0;
     cursor: pointer;
-    background: @bkg-color ;
-    color: @icon-color;
+    background: @ftr-bkg-color ;
+    color: @ftr-icon-color;
     transition: 0.5s;
     -moz-transition: 0.5s;
     -webkit-transition: 0.5s;
@@ -77,8 +77,8 @@ a.btn.btn-social-icon{
   }
 
 a.btn.btn-social-icon:hover {
-     background: @icon-color;
-     color: @bkg-color;
+     background: @ftr-icon-color;
+     color: @ftr-bkg-color;
      transition: 0.5s;
      -moz-transition: 0.5s;
      -webkit-transition: 0.5s;
@@ -89,19 +89,19 @@ a.btn.btn-social-icon:hover {
      -o-filter: drop-shadow(0 1px 10px rgba(0,0,0,.8));
      filter: drop-shadow(0 1px 10px rgba(0,0,0,.8));  
 
-     i {color: @bkg-color;} 
+     i {color: @ftr-bkg-color;} 
   }
 }
 /*
 .footer-social-media-icons {
    padding:40px 10px;
 
-   i { color: @icon-color;} 
+   i { color: @ftr-icon-color;} 
 }
 
 
 .footer-social-media-icons i:hover {
-   color: @bkg-color;
+   color: @ftr-bkg-color;
 }
 */
 
@@ -110,11 +110,11 @@ a.btn.btn-social-icon:hover {
    border-top: solid 1px rgba(255,255,255,0.15);
    margin-bottom: 0px;
    padding: 0px 0px 0px 0px;
-   background-color: @bkg-color ;
+   background-color: @ftr-bkg-color ;
 }
 
 .footer-copyright p {
    text-align:center;
-   color: @text-color;
+   color: @ftr-text-color;
 }
 

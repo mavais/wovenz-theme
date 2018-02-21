@@ -54,7 +54,18 @@ class myFooter extends Component {
            {this.SideLinksTag(tags)}
            </div>
         </div>
-        <div className="col-xs-6 col-sm-5 footer-text">
+        <div className="col-xs-6 col-sm-3">
+         <h5 className="footer-heading"> LEARN MORE </h5>
+           <div className="footer-text">
+             <ul className="list-unstyled">
+               <li><a href="/aboutus">About Us</a></li>
+               <li><a href="/returns">Returns &amp; Exchange</a></li>
+               <li><a href="/shipping">Shipping</a></li>
+               <li><a href="/privacy">Privacy</a></li>
+             </ul>
+           </div>
+        </div>
+        <div className="col-xs-6 col-sm-3 footer-text">
           <h5 className="footer-heading"> OUR ADDRESS </h5>
            <address>
             544&#47;2168<br></br>
@@ -63,10 +74,10 @@ class myFooter extends Component {
             LUCKNOW - 226003<br></br>
             <i className="fa fa-phone"></i>: <a href="tel:+919980169212">+91-9980169212</a><br></br>
             <i className="fa fa-phone"></i>: <a href="tel:+91990976617">+91-990976617</a><br></br>
-            <i className="fa fa-envelope"></i>: <a href="mailto:wovenz@outlook.com">wovenz@outlook.com</a><br></br>
+            <i className="fa fa-envelope"></i>: <a href="mailto:contactus@wovenz.com">contactus@wovenz.com</a><br></br>
            </address>
          </div>
-         <div className="col-xs-12 col-sm-4 footer-social-media-icons">
+         <div className="col-xs-12 col-sm-3 footer-social-media-icons">
            <h5 className="footer-heading"> Follow Us at: </h5>
            <div className="nav navbar">
             <a className="btn btn-social-icon btn-google-plus" href="http://google.com/+wovenz" target="_blank"><i className="fa fa-google-plus"></i></a>

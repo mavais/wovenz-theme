@@ -1,7 +1,53 @@
 /* */
+@cart-icon-bg: lighten(black,30%);
+@cart-icon-text: #DAA520;
+@cart-icon-color: #DAA520;
+//@cart-icon-badge:  black;
+
 main {
   background-color: white;
 }
+
+.container-main{
+  margin-top: 56px;
+}
+
+div.rui.navbar{
+
+  div.badge {
+    background-color: @cart-icon-bg;
+    color: @cart-icon-color;
+  }
+
+  .rui.tag.link{
+    color: @cart-icon-color;
+  }
+
+  button.rui.btn.btn-default.flat > div > span {
+    color: @cart-icon-color;
+  }
+
+  button.rui.btn.btn-default.flat {
+    color: @cart-icon-color;
+  }
+
+  div.dropdown-toggle > span > span {
+    color: @cart-icon-color;
+  }
+
+  .fa.fa-language.fa-lg {
+    color: @cart-icon-color;
+  }
+
+  .fa.fa-caret-down{
+    color: @cart-icon-color;
+  }
+
+  .caret {
+    color: @cart-icon-color;
+  }
+}
+
 
 hr {
   border-top: 1px solid #cccccc;
@@ -9,21 +55,26 @@ hr {
   margin:0px 200px 0px 200px; 
 }
 
-.jumbotron-custom {
-  height: 150px;
-  margin:0px 0px 20px 0px;
-  padding:60px 0px 0px 0px;
-  background-color: white;
-}
-
 .container-custom {
-  margin:20px auto 20px auto;
-  padding:0px 0px 0px 0px;
+  position: relative;
+  width: 100vw;
+//  margin-top: 56px;
+  padding:0px;
 }
 
+/*
+div#reactionAppContainer.page .container-custom {
+  width: 100vw;
+  margin-top: 56px;
+  padding:5px 5px 5px 5px;
+}
+*/
 .img-custom{
   min-height:100%;
   min-width:100%;
 }
 
-
+.img-latest{
+  min-height:350px;
+  max-height:350px;
+}
